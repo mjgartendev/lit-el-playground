@@ -5,7 +5,7 @@ import {
 
 @customElement('list-box')
 export class ListBox extends LitElement {
-  @property()
+  @property({type: String})
   heading = 'ListBox';
   @property( {type: Array})
   items = ['one', 'two', 'three'];

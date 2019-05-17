@@ -4,11 +4,11 @@ import {
 
 @customElement('toggle-box')
 export class ToggleBox extends LitElement {
-  @property()
+  @property({type: String})
   name = 'toggle';
-  @property()
+  @property({type: String})
   trueDisplay = 'so true';
-  @property()
+  @property({type: String})
   falseDisplay = 'nope';
   @property({ type: Boolean })
   isTrue = true;

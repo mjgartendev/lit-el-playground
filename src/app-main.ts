@@ -4,9 +4,9 @@ import {
 
 @customElement('app-main')
 export class AppMain extends LitElement {
-  @property()
+  @property({type: String})
   view = 'toggle';
-  @property()
+  @property({type: String})
   orientation = 'column';
 
   static get styles(){

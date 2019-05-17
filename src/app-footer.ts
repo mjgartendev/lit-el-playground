@@ -4,7 +4,7 @@ import {
 
 @customElement('app-footer')
 export class AppFooter extends LitElement {
-  @property()
+  @property({type: Boolean})
   clipped = false;
 
   static get styles(){

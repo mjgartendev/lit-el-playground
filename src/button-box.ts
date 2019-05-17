@@ -4,11 +4,11 @@ import {
 
 @customElement('button-box')
 export class ButtonBox extends LitElement {
-  @property()
+  @property({type: String})
   label = 'click';
-  @property()
+  @property({type: String})
   action = 'console/log'
-  @property()
+  @property({type: String})
   payload = this.label;
 
   static get styles(){

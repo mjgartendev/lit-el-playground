@@ -4,9 +4,9 @@ import {
 
 @customElement('app-header')
 export class AppHeader extends LitElement {
-  @property()
+  @property({type: String})
   title = 'My App';
-  @property()
+  @property({type: String})
   links = 'one two three';
 
   render(){
