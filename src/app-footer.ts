@@ -15,18 +15,17 @@ export class AppFooter extends LitElement {
       footer{
         grid-area: bottom;
         background: #f1f1f1;
-        position: absolute;
+        border-top: 1px solid #ddd;
+        position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
         display: flex;
         align-items: center;
-        justify-content: center;
-        height: 32px;
+        justify-content: space-between;
       }      
     `;
   }
-
   render(){
     return html`
     <footer>

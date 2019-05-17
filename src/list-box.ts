@@ -11,24 +11,75 @@ export class ListBox extends LitElement {
   items = ['one', 'two', 'three'];
   @property({type: Boolean})
   showInput = true;
+  @property({type: String})
+  direction = 'column'
 
   static get styles() {
     return css`
-      :root{display: block}
-      header{font-weight: bold; text-align: center;}
-      .list{border: 1px solid #ccc; padding: .5rem 1rem; border-radius: 3px;}
-      ul{padding: 0; margin: 8px 0; background: #f1f1f1;}
+      :root{
+        display: block;
+        height: 100%;
+      }
+      header{
+        font-weight: bold; 
+        text-align: center;
+      }
+      footer {
+        text-align: center;
+      }
+      .list{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: #f1f1f1;
+        border: 1px solid #ccc; 
+        padding: 8px; 
+        border-radius: 4px;
+        min-width: 200px;
+      }
+      ul{
+        padding: 0; 
+        background: #f1f1f1;
+        display: flex;
+        flex-direction: column;
+        max-height: 80vh;
+        overflow-x: auto;
+      }
       li{
         display: flex; 
         list-style-type: none; 
         justify-content: space-between;
-        align-items: space-between;
+        align-items: center;
         border: 1px solid #ccc;
-        padding: .5rem;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
+        padding: 8px;
+        margin: 2px;
         border-radius: 4px;
+        background: #fff;
       }
-      button{background: transparent; border: none; box-shadow: none; cursor: pointer; padding: 0;}
-      input{background: #f1f1f1; box-shadow: none; border: 1px solid #ccc; padding: .25rem; border-radius: 4px;}
+      button{
+        background: transparent; 
+        border: none; 
+        box-shadow: none; 
+        cursor: pointer; 
+        padding: .25rem;
+        border-radius: 50%;
+      }
+      button:hover{
+        background: #f1f1f1;
+      }
+      input{
+        background: #ccc;
+        color: #333; 
+        box-shadow: none; 
+        border: 1px solid #ccc; 
+        padding: .5rem; 
+        border-radius: 4px;
+        width: 90%;
+      }
+      input:focus{
+        border-color: #2196F3;
+      }
     `;
   }
 

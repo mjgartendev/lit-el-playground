@@ -9,29 +9,42 @@
   
   <title>lit-element code sample</title>
   <style>
-    body{padding: 0; margin: 0; height: 100%}
+    html{box-sizing: border-box}
+    *, *:before, *:after{box-sizing: inherit}
+    body{padding: 0; margin: 0; height: 100%; overflow-y: hidden;}
+    section{padding: 8px;max-height: 100vh;}
   </style>
 </head>
 <body>
-  <app-header title="Awesome App" links="home about contact"></app-header>
+  <app-header title="Awesome App" links="home about contact">
+    <toggle-box trueDisplay=✔️ falseDisplay=❌></toggle-box>
+  </app-header>
 
   <app-main orientation="row">
     <section>
-      <word-tag></word-tag>
+      <list-box heading="ListBox" items=['one']></list-box>
     </section>
     <section>
       <list-box heading="ListBox" items=['one']></list-box>
     </section>
     <section>
-      <p>Toggle Box</p>      
-      <toggle-box trueDisplay=✔️ falseDisplay=❌></toggle-box>
+      <list-box heading="ListBox" items=['one']></list-box>
     </section>
   </app-main>
 
   <app-footer>
-    <button-box label="one" action="showModal" payload="type:form"></button-box>
-    <button-box></button-box>
-    <button-box></button-box>
+    <section>
+      <word-tag></word-tag>
+    </section>
+    <section>
+      <button-box 
+        label="one" 
+        action="showModal" 
+        payload="type:form"
+      ></button-box>
+      <button-box></button-box>
+      <button-box></button-box>
+    </section>
   </app-footer>
 </body>
 </html>

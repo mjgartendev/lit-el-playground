@@ -12,27 +12,43 @@ export class AppHeader extends LitElement {
   render(){
     return html`
       <style>
-        :root{display:block}
+        :root{
+          display:block
+        }
         header{
           display: flex; 
-          align-items: center; 
           justify-content: space-between;
           background: #f1f1f1;
-          font-weight: bold; 
+          font-weight: bold;
+          border-bottom: 1px solid #ddd;
         }
-        .start{padding-left: .5rem}
-        .end{padding-right: .5rem}
-        nav{display: flex; justify-content: space-between}
+        .start{
+          padding-left: .5rem; 
+          display: flex;
+          align-items: center;
+        }
+        .end{
+          padding-right: .5rem
+        }
+        nav{
+          display: flex; 
+          justify-content: space-between;
+        }
         a, .navlink{
           text-decoration: none; 
-          color: seagreen; 
+          color: mediumseagreen; 
           padding: .75em;
         }
-        .navlink:hover{cursor: pointer; background: seagreen; color: white}
+        .navlink:hover{
+          cursor: pointer; 
+          background: mediumseagreen; 
+          color: white
+        }
       </style>
 
-      <header>
-        <section class="start">
+      <header>        
+        <section class="start"> 
+          <slot></slot>         
           <a href="/">${this.title}</a>
         </section>
         <section class="end">

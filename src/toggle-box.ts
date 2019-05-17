@@ -6,10 +6,13 @@ import {
 export class ToggleBox extends LitElement {
   @property({type: String})
   name = 'toggle';
+
   @property({type: String})
   trueDisplay = 'so true';
+
   @property({type: String})
   falseDisplay = 'nope';
+  
   @property({ type: Boolean })
   isTrue = true;
 
@@ -21,8 +24,7 @@ export class ToggleBox extends LitElement {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 2rem;
-        border: 1px solid #ddd;
+        margin-left: .5rem;
         border-radius: 4px;
         cursor: pointer;
       }

@@ -5,7 +5,7 @@ import {
 @customElement('app-main')
 export class AppMain extends LitElement {
   @property({type: String})
-  view = 'toggle';
+  view = 'kanban';
   @property({type: String})
   orientation = 'column';
 
@@ -17,13 +17,10 @@ export class AppMain extends LitElement {
       main{
         margin: 1rem;
         display: flex;
-        flex: 1 1 auto;
-        justify-content: space-around;
+        flex: 1 0 auto;
+        justify-content: flex-start;
         align-items: flex-start;
-        flex-flow: row wrap;
-      }
-      main.row {
-        flex-direction: row;
+        flex-flow: row nowrap;
       }
       main.column {
         flex-direction: column;
