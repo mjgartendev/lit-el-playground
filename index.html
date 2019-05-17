@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+  <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+  
+  <title>lit-element code sample</title>
+  <style>
+    body{padding: 0; margin: 0; height: 100%}
+  </style>
+</head>
+<body>
+  <app-header title="Awesome App" links="home about contact"></app-header>
+
+  <app-main orientation="row">
+    <section>
+      <list-box heading="ListBox" items=['one']></list-box>
+    </section>
+    <section>
+      <p>Toggle Box</p>
+      <toggle-box trueDisplay=✔️ falseDisplay=❌></toggle-box>
+    </section>
+  </app-main>
+
+  <app-footer>
+    This is my footer
+  </app-footer>
+</body>
+</html>

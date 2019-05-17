@@ -1,0 +1,9 @@
+{
+  "name": "newudm.run",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "lit-element": "2.1.0",
+    "@webcomponents/webcomponentsjs": "2.2.10"
+  }
+}
