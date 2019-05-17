@@ -13,12 +13,18 @@
     *, *:before, *:after{box-sizing: inherit}
     body{padding: 0; margin: 0; height: 100%; overflow-y: hidden;}
     section{padding: 8px;max-height: 100vh;}
+    :root{
+      --drawer-bg: #ccc;
+    }
   </style>
 </head>
 <body>
   <app-header title="Awesome App" links="home about contact">
     <toggle-box trueDisplay=✔️ falseDisplay=❌></toggle-box>
   </app-header>
+  <app-drawer>
+    <button-box></button-box>
+  </app-drawer>
 
   <app-main orientation="row">
     <section>
@@ -29,6 +35,9 @@
     </section>
     <section>
       <list-box heading="ListBox" items=['one']></list-box>
+    </section>
+    <section>
+      <toggle-box falseDisplay="<input placeholder='add list title'/>" trueDisplay="add list"></toggle-box>
     </section>
   </app-main>
 

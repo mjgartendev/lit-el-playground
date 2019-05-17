@@ -1,4 +1,5 @@
 import './src/app-header.ts';
+import "./src/app-drawer.ts";
 import './src/app-main.ts';
 import './src/app-footer.ts';
 import "./src/list-box.ts";

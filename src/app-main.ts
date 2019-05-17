@@ -16,6 +16,7 @@ export class AppMain extends LitElement {
       }
       main{
         margin: 1rem;
+        margin-left: 64px;
         display: flex;
         flex: 1 0 auto;
         justify-content: flex-start;
