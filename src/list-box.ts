@@ -2,10 +2,11 @@ import {
   LitElement, html,css, customElement, property
 } from 'lit-element';
 
+
 @customElement('list-box')
 export class ListBox extends LitElement {
   @property()
-  heading = 'My List';
+  heading = 'ListBox';
   @property( {type: Array})
   items = ['one', 'two', 'three'];
   @property({type: Boolean})

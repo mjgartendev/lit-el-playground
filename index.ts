@@ -1,5 +1,6 @@
-import './app-header.ts';
-import './app-main.ts';
-import './app-footer.ts';
-import "./list-box.ts";
-import "./toggle-box.ts";
+import './src/app-header.ts';
+import './src/app-main.ts';
+import './src/app-footer.ts';
+import "./src/list-box.ts";
+import "./src/toggle-box.ts";
+import "./src/button-box.ts";
