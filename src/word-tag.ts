@@ -35,7 +35,7 @@ export class WordTag extends LitElement {
           padding: 8px;
           border-radius: 5px;
           overflow-y: auto;
-          max-width: 400px;
+          max-width: 700px;
         }
         .remove-icon {
           background: transparent;
@@ -55,8 +55,8 @@ export class WordTag extends LitElement {
           box-shadow: inset 0 2px 1px -2px rgba(0,0,0,0.15);
           border-radius: 5px;
           background: #ddd;
-          min-width: 20px;
-          max-width: 50px;
+          min-width: 40px;
+          width: 70px;
         }
     `;
     }
