@@ -11,21 +11,22 @@ export class AppDrawer extends LitElement {
   isMini = true;
 
   @property({type: String})
-  items = [];
+  items = '';
 
   render(){
     return html`
       <style>
         :root{
           display:block;
+        }
+        aside{
           --drawer-width: 64px;
           --drawer-mini-width: 64px;
           --drawer-bg: #f1f1f1;
-        }
-        aside{
           display: flex; 
-          justify-content: space-between;
+          justify-content: center;
           align-items: flex-start;
+          bavkground: #f1f1f1;
           background: var(--drawer-bg, #f1f1f1;);
           border-right: 1px solid #ddd;
           position: absolute;
@@ -35,7 +36,9 @@ export class AppDrawer extends LitElement {
         nav{
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
+          justify-content: space-between;
+          padding: 0;
+          text-align: center;
         }
         a, .navlink{
           text-decoration: none; 
@@ -49,11 +52,15 @@ export class AppDrawer extends LitElement {
         }
       </style>
 
-      <aside><slot></slot></aside>
+      <aside>
+        <nav>${this.navLinks}
+        <slot></slot>
+        </nav>
+      </aside>
     `;
   }
 
   get navLinks() {
-    return this.items.map(l => html`<a class="navlink" href="/${l}">${l}</a>`);
+    return this.items.split(' ').map(l => html`<a class="navlink" href="/${l}">${l}</a>`);
   }
 }
