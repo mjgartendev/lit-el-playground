@@ -36,6 +36,8 @@ export class ListBox extends LitElement {
         padding: 8px; 
         border-radius: 4px;
         min-width: 200px;
+        max-height: 75vh;
+        
       }
       ul{
         padding: 0; 

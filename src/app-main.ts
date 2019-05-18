@@ -15,13 +15,17 @@ export class AppMain extends LitElement {
         display: block;
       }
       main{
-        margin: 1rem;
-        margin-left: 100px;
+        background: mediumseagreen;
+        padding: 1rem;
+        padding-left: 100px;
         display: flex;
-        flex: 1 0 auto;
+        flex: 1 1 auto;
         justify-content: flex-start;
         align-items: flex-start;
         flex-flow: row nowrap;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
       }
       main.column {
         flex-direction: column;

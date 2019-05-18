@@ -16,12 +16,11 @@ export class AppHeader extends LitElement {
           display:block
         }
         header{
+          padding: 0;
           display: flex; 
           justify-content: space-between;
-          align-items: center;
           background: #f1f1f1;
           font-weight: bold;
-          font-size: 1.1rem;
           border-bottom: 1px solid #ddd;
         }
         .start{
@@ -31,6 +30,7 @@ export class AppHeader extends LitElement {
           justify-content: flex-start;
         }
         .end{
+          
           padding-right: .5rem
           align-items: center;
           justify-content: flex-end;

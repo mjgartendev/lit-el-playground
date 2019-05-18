@@ -1,33 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js">
-
-	</script>
-	<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js">
-
-	</script>
-
-	<title>lit-element code sample</title>
+	<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+	<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+	<title>lit-el | kanban components</title>
 	<style>
 		html {
 			box-sizing: border-box
 		}
-
 		*,
 		*:before,
 		*:after {
 			box-sizing: inherit
 		}
-
 		body {
 			padding: 0;
 			margin: 0;
-			height: 100&;
+			height: 100vh;
 			overflow-y: hidden;
 		}
 
@@ -70,17 +62,27 @@
 
 	<app-footer>
 		<section>
-			<p>Labels:</p>
-			<word-tag></word-tag>
+			<span>Labels:</span>
+			<word-tag items="todo doing done"></word-tag>
 		</section>
 		<section>
-			<button-box label="modal details" action="showModal" payload="type=detail&id='example-card'">
+			<button-box 
+        label="modal details" 
+        action="showModal" 
+        payload="type=detail&id='example-card'"
+      >
 			</button-box>
-
-			<button-box label="modal form" action="showModal" payload="type=form&id='example-form'">
+			<button-box 
+        label="modal form" 
+        action="showModal" 
+        payload="type=form&id='example-form'"
+      >
 			</button-box>
-      
-			<button-box label="drawer" action="showDrawer" payload="side=right&id='settings'">
+			<button-box 
+        label="drawer" 
+        action="showDrawer" 
+        payload="side=right&id='settings'"
+      >
 			</button-box>
 		</section>
 	</app-footer>

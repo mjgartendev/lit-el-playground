@@ -16,11 +16,13 @@ export class AppFooter extends LitElement {
         grid-area: bottom;
         background: #f1f1f1;
         border-top: 1px solid #ddd;
-        position: fixed;
+        position: absolute;
+        font-size: .9rem;
         bottom: 0;
         left: 0;
         right: 0;
         display: flex;
+        flex-flow: row nowrap;
         align-items: center;
         justify-content: space-between;
       }      

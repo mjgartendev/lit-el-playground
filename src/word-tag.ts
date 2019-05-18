@@ -3,7 +3,7 @@ import { html, css, LitElement, customElement, property } from "lit-element";
 @customElement('word-tag')
 export class WordTag extends LitElement {
    @property({ type: String })
-   keywords = "one two three";
+   keywords = '1 2 3';
 
    static get styles() {
     return css`
@@ -13,40 +13,50 @@ export class WordTag extends LitElement {
         }
         .tag {
           display: flex;
-          flex-flow: row wrap;
+          flex-flow: row nowrap;
           align-items: center;
-          padding: 3px 7px;
-          border-radius: 10px;
-          background-color: #2196F3;
-          background: linear-gradient(115deg, #2196F3 0%, #8FCDFF 100%);
-          background-attachment: fixed;
+          justify-content: space-evenly;
+          padding: 2px 7px;
+          border-radius: 5px;
+          background-color: mediumseagreen;
+          background: linear-gradient(150deg, mediumseagreen 0%, seagreen 100%);
           font-size: .9rem;
           color: #FFFFFF;
           margin-left: 4px;
         }
         .word {
           font-weight: bold;
-          text-transform: lowercase;
         }
         .wrapper{
           display: flex;
-          flex-flow: row wrap;
-          background: #f1f1f1;
+          flex-flow: row nowrap;
+          flex: 1 1 auto;
+          background: #f3f3f3;
           padding: 8px;
           border-radius: 5px;
+          overflow-y: auto;
+          max-width: 400px;
         }
         .remove-icon {
-          padding: 3px;
+          background: transparent;
+          color: white;
+          border: none;
+          box-shadow: none;
           cursor: pointer;
-          margin-left: 5px;
           font-weight: bold;
+          text-align: right;
+          padding: 2px;
+          margin-left: 4px;
         }
         input{
           text-align: center;
+          font-weight: bold;
           border: 1px solid #ccc;
-          border-radius: 10px;
+          box-shadow: inset 0 2px 1px -2px rgba(0,0,0,0.15);
+          border-radius: 5px;
           background: #ddd;
-          width: 40px;
+          min-width: 20px;
+          max-width: 50px;
         }
     `;
     }
@@ -54,31 +64,36 @@ export class WordTag extends LitElement {
    render() {
      return html`
      <div class="wrapper">
-        <input placeholder="..." @change="${this.handleInput}"/>
+        <input placeholder="+" @change="${this.handleInput}"/>
         ${this.tagList}
       </div>
      `
    }
 
   get tagList(){
-    const tokens = this.keywords.split(' ');
-    const list = tokens.map(word => html`
+    return this.keywords.split(' ')
+      .map(word => html`
         <div class="tag">
           <span class="word">
             ${word}
           </span>
-          <span class="remove-icon @click="${this.handleClick}">
+          <button class="remove-icon" data-id="${word}" @click="${this.handleClick}">
             &times;
-          </span>
-        </div>`);
-    return list;
-  }
+          </button>
+        </div>`
+      );
+  };
+
   handleInput(e){
     this.keywords += ` ${e.target.value}`;
     e.target.value = '';
-  }
+    return e.target.value;
+  };
 
-  handleClick(e: MouseEvent){
-    console.log(e.target)
-  }
+  handleClick(e){
+    return this.keywords = this.keywords
+      .split(' ')
+      .filter(word => word !== e.target.dataset.id)
+      .join(' ')
+  };
 }

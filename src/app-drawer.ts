@@ -20,13 +20,10 @@ export class AppDrawer extends LitElement {
           display:block;
         }
         aside{
-          --drawer-width: 64px;
-          --drawer-mini-width: 64px;
-          --drawer-bg: #f1f1f1;
           display: flex; 
           justify-content: center;
           align-items: flex-start;
-          bavkground: #f1f1f1;
+          background: #f1f1f1;
           background: var(--drawer-bg, #f1f1f1;);
           border-right: 1px solid #ddd;
           position: absolute;
@@ -61,6 +58,8 @@ export class AppDrawer extends LitElement {
   }
 
   get navLinks() {
-    return this.items.split(' ').map(l => html`<a class="navlink" href="/${l}">${l}</a>`);
+    return this.items.split(' ').map(l => html`
+        <a class="navlink" href="/${l}">${l}</a>
+      `);
   }
 }
