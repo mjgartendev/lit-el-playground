@@ -18,17 +18,22 @@ export class AppHeader extends LitElement {
         header{
           display: flex; 
           justify-content: space-between;
+          align-items: center;
           background: #f1f1f1;
           font-weight: bold;
+          font-size: 1.1rem;
           border-bottom: 1px solid #ddd;
         }
         .start{
           padding-left: .5rem; 
           display: flex;
           align-items: center;
+          justify-content: flex-start;
         }
         .end{
           padding-right: .5rem
+          align-items: center;
+          justify-content: flex-end;
         }
         nav{
           display: flex; 
@@ -47,12 +52,16 @@ export class AppHeader extends LitElement {
       </style>
 
       <header>        
-        <section class="start"> 
-          <slot></slot>         
+        <section class="start">
+          <slot name="start"></slot>         
           <a href="/">${this.title}</a>
+        </section>
+        <section>
+          <slot name="center"></slot> 
         </section>
         <section class="end">
           <nav>${this.navLinks}</nav>
+          <slot name="end"></slot>  
         </section>
       </header>
     `;
