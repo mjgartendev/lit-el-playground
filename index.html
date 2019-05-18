@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js">
+
 	</script>
 	<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js">
+
 	</script>
 
 	<title>lit-element code sample</title>
@@ -41,12 +44,8 @@
 
 <body>
 	<app-header title="Lit-El Kanban" links="dashboard plugins theme">
-		<toggle-box 
-      slot="start" 
-      trueDisplay="expand" 
-      falseDisplay="collapse"
-    >
-    </toggle-box>
+		<toggle-box slot="start" trueDisplay="expand" falseDisplay="collapse">
+		</toggle-box>
 	</app-header>
 
 	<app-drawer items="profile projects settings">
@@ -54,47 +53,35 @@
 
 	<app-main orientation="row">
 		<section>
-			<list-box heading="ListBox" items=['one']></list-box>
+			<list-box heading="ListBox" items=[ 'one']></list-box>
 		</section>
 		<section>
-			<list-box heading="List Two" items=['one']></list-box>
+			<list-box heading="List Two" items=[ 'one']></list-box>
 		</section>
 		<section>
-			<list-box heading="List Three" items=['one']></list-box>
+			<list-box heading="List Three" items=[ 'one']></list-box>
 		</section>
 		<section>
-      <p>New List</p>
-			<toggle-box 
-        falseDisplay="<input placeholder='add list title'/>" 
-        trueDisplay="add list"
-      >
-      </toggle-box>
+			<p>New List</p>
+			<toggle-box falseDisplay="<input placeholder='add list title'/>" trueDisplay="add list">
+			</toggle-box>
 		</section>
 	</app-main>
 
 	<app-footer>
 		<section>
-      <p>Labels:</p>
+			<p>Labels:</p>
 			<word-tag></word-tag>
 		</section>
 		<section>
-			<button-box 
-        label="modal details" 
-        action="showModal" 
-        payload="type=detail&id='example-card'"
-      >
-      </button-box>
-			<button-box 
-        label="modal form" 
-        action="showModal" 
-        payload="type=form&id='example-form'"
-      >
-      </button-box><button-box 
-        label="drawer" 
-        action="showDrawer" 
-        payload="side=right&id='settings'"
-      >
-      </button-box>
+			<button-box label="modal details" action="showModal" payload="type=detail&id='example-card'">
+			</button-box>
+
+			<button-box label="modal form" action="showModal" payload="type=form&id='example-form'">
+			</button-box>
+      
+			<button-box label="drawer" action="showDrawer" payload="side=right&id='settings'">
+			</button-box>
 		</section>
 	</app-footer>
 </body>
