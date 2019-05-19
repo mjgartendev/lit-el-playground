@@ -54,9 +54,13 @@
 			<list-box heading="List Three" items=[ 'one']></list-box>
 		</section>
 		<section>
-			<p>New List</p>
-			<toggle-box falseDisplay="<input placeholder='add list title'/>" trueDisplay="add list">
-			</toggle-box>
+			<button-box 
+        label="New List" 
+        action="showModal" 
+        payload="type=detail&id='example-card'"
+      ></button-box>
+			<!-- <toggle-box falseDisplay="<input placeholder='add list title'/>" trueDisplay="add list">
+			</toggle-box> -->
 		</section>
 	</app-main>
 
@@ -67,23 +71,20 @@
 		</section>
 		<section>
 			<button-box 
-        label="modal details" 
+        label="modalDetails" 
         action="showModal" 
         payload="type=detail&id='example-card'"
-      >
-			</button-box>
+      ></button-box>
 			<button-box 
         label="modal form" 
         action="showModal" 
         payload="type=form&id='example-form'"
-      >
-			</button-box>
+      ></button-box>
 			<button-box 
         label="drawer" 
         action="showDrawer" 
         payload="side=right&id='settings'"
-      >
-			</button-box>
+      ></button-box>
 		</section>
 	</app-footer>
 </body>

@@ -7,9 +7,9 @@ export class ButtonBox extends LitElement {
   @property({type: String})
   label = 'click';
   @property({type: String})
-  action = 'console/log'
+  action = ''
   @property({type: String})
-  payload = this.label;
+  payload = '';
 
   static get styles(){
     return css`
@@ -18,8 +18,8 @@ export class ButtonBox extends LitElement {
       }
       button{
         text-decoration: none;
-        background: transparent;
-        color: currentColor;
+        background: #fff;
+        color: mediumseagreen;
         border: 1px solid;
         border-color: transparent;
         border-radius: 4px;        
@@ -28,18 +28,21 @@ export class ButtonBox extends LitElement {
       }
       button:hover{
         cursor: pointer;
-        background: #ccc;
+        border-color: currentColor;
       }
     `;
   }
 
   render(){
     return html`
-      <button @click="${this.handleClick}"><slot>${this.label}</slot></button>
+      <button data-action="${this.action}" data-payload="${this.payload}" @click="${this.handleClick}">
+        <slot>${this.label}</slot>
+      </button>
     `;
   }
 
   handleClick(e: MouseEvent){
-    console.log(`${this.action.split('/').join('.')}(${this.payload})`)
+    const payloadJSON = `{${this.payload.split('&').join(', ')}}`;
+    console.log(`${this.action.split('/').join('.')}(${payloadJSON})`)
   }
 }
